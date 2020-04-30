@@ -28,19 +28,19 @@
     <!-- query result -->
     <div id="queryresult">
       <table id="qr_layername_table">
-        <caption>Layer name</caption>
+        <caption>Capa</caption>
         <tr><td id="qr_layername"></td></tr>
       </table>
 
       <table id="qr_coords_table">
-        <caption>Clicked coordinates</caption>
+        <caption>Coordenadas</caption>
         <tr><td id="qr_coords"></td></tr>
       </table>
 
       <!-- camera actions -->
-      <div class="action-btn action-zoom" onclick="app.cameraAction.zoomIn(); app.closePopup();">Zoom in here</div>
+      <div class="action-btn action-zoom" onclick="app.cameraAction.zoomIn(); app.closePopup();">Zoom</div>
       <div class="action-btn action-move" onclick="app.cameraAction.move(); app.closePopup();">Move here</div>
-      <div class="action-btn action-orbit" onclick="app.cameraAction.orbit(); app.closePopup();">Orbit around here</div>
+      <div class="action-btn action-orbit" onclick="app.cameraAction.orbit(); app.closePopup();">Orbitar</div>
 
       <!-- attributes -->
       <table id="qr_attrs_table">
@@ -55,24 +55,24 @@
 
       <h1>Usage</h1>
       <table id="usage">
-        <tr><td colspan="2" class="star">Mouse</td></tr>
-        <tr><td>Left button + Move</td><td>Orbit</td></tr>
-        <tr><td>Mouse Wheel</td><td>Zoom</td></tr>
-        <tr><td>Right button + Move</td><td>Pan</td></tr>
+        <tr><td colspan="2" class="star">Ratón</td></tr>
+        <tr><td>Boton izquierdo + Mover</td><td>Girar en torno a un eje perpendicular al plano que pasa por el centro</td></tr>
+        <tr><td>Rueda del ratón</td><td>Acercar/alejar</td></tr>
+        <tr><td>Boton derecho + Mover</td><td>Desplazamiento lateral izquierda/derecha</td></tr>
 
-        <tr><td colspan="2" class="star">Keys</td></tr>
-        <tr><td>Arrow keys</td><td>Move Horizontally</td></tr>
-        <tr><td>Shift + Arrow keys</td><td>Orbit</td></tr>
-        <tr><td>Ctrl + Arrow keys</td><td>Rotate</td></tr>
-        <tr><td>Shift + Ctrl + Up / Down</td><td>Zoom In / Out</td></tr>
-        <tr><td>L</td><td>Toggle Label Visibility</td></tr>
-        <tr><td>R</td><td>Start / Stop Rotate Animation (Orbiting)</td></tr>
-        <tr><td>W</td><td>Wireframe Mode</td></tr>
-        <tr><td>Shift + R</td><td>Reset Camera Position</td></tr>
-        <tr><td>Shift + S</td><td>Save Image</td></tr>
+        <tr><td colspan="2" class="star">Teclas</td></tr>
+        <!-- <tr><td>Arrow keys</td><td>Move Horizontally</td></tr> -->
+        <tr><td>Shift + flechas</td><td>Orbitar</td></tr>
+        <tr><td>Ctrl + flechas</td><td>Rotar</td></tr>
+        <tr><td>Ctrl + shift + arriba/abajo</td><td>Acercar/alejar</td></tr>
+        <tr><td>L</td><td>Enciende/apaga capa</td></tr>
+        <tr><td>R</td><td>Inicia/detiene rotación</td></tr>
+        <tr><td>W</td><td>	Modelo de "alambre"</td></tr>
+        <tr><td>Shift + R</td><td>Reinicia la posición de la cámara</td></tr>
+        <tr><td>Shift + S</td><td>Guardar imagen</td></tr>
       </table>
 
-      <h1>About</h1>
+      <!-- <h1>About</h1>
       <div id="about">
         This page was made with <a href="https://www.qgis.org/" target="_blank">QGIS</a> and <a href="https://github.com/minorua/Qgis2threejs" target="_blank">Qgis2threejs</a> plugin.
         Dependent JavaScript libraries are
@@ -80,7 +80,7 @@
         <a href="https://code.google.com/p/dat-gui/" target="_blank">dat-gui</a>
         <span id="lib_proj4js"> and <a href="https://trac.osgeo.org/proj4js/" target="_blank">Proj4js</a></span>
         .
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -94,7 +94,7 @@
 
 <script>
 
-if (typeof proj4 === "undefined") document.getElementById("lib_proj4js").style.display = "none";
+// if (typeof proj4 === "undefined") document.getElementById("lib_proj4js").style.display = "none";
 
 var app = Q3D.application,
     container = document.getElementById("view");
