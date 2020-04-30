@@ -24,7 +24,7 @@ Q3D.gui = {
     this.gui.domElement.parentElement.style.zIndex = 1000;   // display the panel on the front of labels
     if (setupDefaultItems === undefined || setupDefaultItems == true) {
       this.addLayersFolder();
-      this.customPlaneFolder = this.gui.addFolder('Custom Plane');
+      this.customPlaneFolder = this.gui.addFolder('Plano de Corte');
       if (Q3D.isTouchDevice) this.addCommandsFolder();
       this.addHelpButton();
     }
@@ -36,13 +36,13 @@ Q3D.gui = {
     var visibleChanged = function (value) { mapLayers[this.object.i].visible = value; };
     var opacityChanged = function (value) { mapLayers[this.object.i].opacity = value; };
 
-    var layer, layersFolder = this.gui.addFolder('Layers');
+    var layer, layersFolder = this.gui.addFolder('Capas');
     for (var layerId in mapLayers) {
       layer = mapLayers[layerId];
       parameters.lyr[layerId] = {i: layerId, v: layer.visible, o: layer.opacity};
       var folder = layersFolder.addFolder(layer.properties.name);
       folder.add(parameters.lyr[layerId], 'v').name('Visible').onChange(visibleChanged);
-      folder.add(parameters.lyr[layerId], 'o').min(0).max(1).name('Opacity').onChange(opacityChanged);
+      folder.add(parameters.lyr[layerId], 'o').min(0).max(1).name('Opacidad').onChange(opacityChanged);
     }
   },
 
@@ -81,7 +81,7 @@ Q3D.gui = {
     });
 
     // Plane opacity
-    this.customPlaneFolder.add(parameters.cp, 'o').min(0).max(1).name('Opacity (0-1)').onChange(function (value) {
+    this.customPlaneFolder.add(parameters.cp, 'o').min(0).max(1).name('Opacidad (0-1)').onChange(function (value) {
       if (customPlane === undefined) addPlane(parameters.cp.c);
       customPlane.material.opacity = value;
       app.render();
@@ -105,6 +105,6 @@ Q3D.gui = {
   },
 
   addHelpButton: function () {
-    this.gui.add(this.parameters, 'i').name('Help');
+    this.gui.add(this.parameters, 'i').name('Ayuda');
   }
 };
