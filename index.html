@@ -89,11 +89,15 @@
 <div id="progress"><div id="bar"></div></div>
 
 <!-- header and footer -->
-<div id="header"></div>
+<div id="header">Rugosidad en función de la superficie tridimenisonal en la cuenca del río Magdalena
+  <div><img src="paletaRugosidad.png"></img></div>
+</div>
 <div id="footer"></div>
 
 <script>
-
+Q3D.Config.viewpoint = {lookAt:{x:0.0,y:0.0,z:0.0},pos:{x:75.02118960971443,y:106.056602717313,z:-34.26102931327786}};
+Q3D.Config.northArrow.visible = true;
+Q3D.Config.northArrow.color = 0xb90404;
 // if (typeof proj4 === "undefined") document.getElementById("lib_proj4js").style.display = "none";
 
 var app = Q3D.application,
